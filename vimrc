@@ -137,6 +137,192 @@ runtime! macros/matchit.vim
 " Show (partial) command in the status line
 set showcmd
 
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeChDirMode=2
+
+map <Leader>n :NERDTreeToggle<CR>
+
+
+" Turn off the stupid bell
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" Turn on line numbers
+set number
+
+" Hide invisible characters
+set invlist
+
+" Display as much of the last line as possible
+set display+=lastline
+
+" Turn on spellcheck
+set spell
+
+"Make the arrow and movement keys wrap around lines
+set whichwrap+=<,>,h,l,[,]
+
+" Ignore case in search by default
+set ic
+set smartcase
+set textwidth=0
+set wrap
+set linebreak
+
+" Tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" set textwidth=80
+set smarttab
+" set expandtab
+" set nosmartindent
+
+" Tell Vim to always use the system clipboard for yank, delete, and paste
+set clipboard=unnamed
+
+" Use f5 to 'refresh' the file
+map <F5> :e %<cr>
+imap <F5> <Esc>:e %<cr>
+
+set noswapfile
+set nobackup
+
+" Various mac customizations
+if has("macunix")
+	" Make it easier to open the current folder in Finder (mac only)
+	map <C-o> :cd `dirname %`<cr>:silent !open .<cr>
+	imap <C-o> <Esc>:cd `dirname %`<cr>:silent !open .<cr>i
+	" Set path for exuberant ctags utility
+	let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+	" Use option as a meta key
+	set macmeta
+	imap <M-a> M-a
+endif
+
+" MRU Most recently used file configuration
+let MRU_Max_Entries = 1000
+
+function Outline()
+	set ft=outline
+endfunction
+
+function EndOutline()
+	filetype detect
+endfunction
+
+map <F2> :call Outline()<cr>
+imap <F2> <Esc>:call Outline()<cr>a
+
+map <S-F2> :call EndOutline()<cr>
+imap <S-F2> <Esc>:call EndOutline()<cr>a
+
+" Function to replace a block of python code with its own output
+if has("python")
+python << EOL
+import vim, StringIO,sys
+def PyExecReplace(line1,line2):
+  r = vim.current.buffer.range(int(line1),int(line2))
+  redirected = StringIO.StringIO()
+  sys.stdout = redirected
+  exec('\n'.join(r) + '\n')
+  sys.stdout = sys.__stdout__
+  output = redirected.getvalue().split('\n')
+  r[:] = output[:-1] # the -1 is to remove the final blank line
+  redirected.close()
+EOL
+command -range Pyer python PyExecReplace(<f-line1>,<f-line2>)
+endif
+" Convert outline format to LaTeX
+command Texify !python $HOME/.vim/scripts/texify.py % 
+
+" LilyPond compilation and editing
+filetype off
+set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/
+filetype on
+ 
+" Calculate the number of screen lines needed to display a file with folds at
+" the given fold_level. This is used to set the initial fold level of a file
+" in order to display the entire file on screen if possible without closing
+" any unnecessary folds.
+function! ScreenLines(fold_level)
+	let line_num = 1
+	let screen_lines = 0
+	let prev_fold_level = 0
+	let cur_fold_level = 0
+	let buf_length = line("$")
+	while line_num <= buf_length
+		let fold_expr = foldlevel(line_num)
+		let prev_fold_level = cur_fold_level
+		let cur_fold_level = fold_expr
+		if (cur_fold_level <= a:fold_level) || ((cur_fold_level != prev_fold_level) && (prev_fold_level <= a:fold_level))
+ 			let screen_lines = screen_lines + 1
+		endif
+	    let line_num = line_num+1
+   endwhile
+   return screen_lines
+endfunction
+
+" Increase the fold level until the entire file will fit on the screen or
+" foldlevel reaches 10, whichever comes first. 
+function! FoldToScreen()
+	let ndx = 0
+	set foldlevel=0
+	while ndx < 10
+		let ndx = ndx + 1
+		if ScreenLines(ndx) > &lines
+			break
+		endif
+		set foldlevel+=1
+	endwhile
+endfunction
+
+" autocmd BufWinEnter * call FoldToScreen()
+
+
+
+" " Configuration for vim-latex
+" " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+" 
+" " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" " can be called correctly.
+set shellslash
+" 
+" " IMPORTANT: grep will sometimes skip displaying the file name if you
+" " search in a singe file. This will confuse Latex-Suite. Set your grep
+" " program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+" 
+" " OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+" 
+" " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" " The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+let g:buftabs_only_basename=1
+let g:buftabs_in_statusline=1
+let g:buftabs_active_highlight_group="Visual"
+noremap <C-left> :bprev<CR>
+noremap <C-right> :bnext<CR>
+
+" Set leader to , (comma) for easier reaching
+let mapleader = ","
+
+" Fuzzyfinder customizations
+map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
+map <leader>b :FufBuffer<C-M>
+map <leader>m :FufMruFile<C-M>
+let g:fuf_modesDisable = ['mrucmd']
+
+" Binding for nicer buffer closing
+map <M-w> <Plug>BufKillBd
+
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local

@@ -69,7 +69,7 @@ set visualbell
 set guioptions-=T
 
 " Default gui color scheme
-color ir_black
+" color ir_black
 
 " ConqueTerm wrapper
 function StartTerm()
@@ -228,6 +228,45 @@ if exists("loaded_nerd_tree")
   call s:DefineCommand("mkdir", "Mkdir")
   cabbrev Edit! e!
 endif
+
+set novisualbell
+" colorscheme osx_like
+colorscheme desert-mod
+if has("macunix")
+    " Transparency
+    set transparency=3
+    set guifont=DejaVu\ Sans\ Mono:h12
+else
+    " set guifont="Ubuntu Mono 11"
+    set guifont="DejaVu Sans Mono 10"
+    set lines=45
+    map <M-/> <plug>NERDCommenterToggle<CR>
+    imap <M-/> <Esc><plug>NERDCommenterToggle<CR>i
+endif
+
+" Map backspace to d (to delete characters) in visual mode
+vnoremap <BS> ""di
+
+if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
+    set columns=90
+else
+    set columns=121
+endif
+
+" Use visual mode, not select mode, when selecting with the mouse
+set selectmode=
+
+map <Leader>n :call ToggleTreeAndCols()<CR>
+function ToggleTreeAndCols()
+    NERDTreeToggle
+    if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
+        set columns=90
+    else
+        set columns=121
+    endif
+endfunction
+
+unmap <leader>m=
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
