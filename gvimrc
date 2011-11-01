@@ -266,7 +266,7 @@ function ToggleTreeAndCols()
     endif
 endfunction
 
-" unmap <leader>m=
+unmap <leader>m=
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))
