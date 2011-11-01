@@ -1,5 +1,7 @@
 set nocompatible
 
+set runtimepath+=$HOME/.vim/janus_runtime
+
 set number
 set ruler
 syntax on
