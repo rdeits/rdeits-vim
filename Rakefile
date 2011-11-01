@@ -1,3 +1,6 @@
+runtime_dir = "janus_runtime"
+directory(runtime_dir)
+Dir.chdir(runtime_dir)
 module VIM
   Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
 end
@@ -144,7 +147,7 @@ vim_plugin_task "textile",          "git://github.com/timcharper/textile.vim.git
 vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
 vim_plugin_task "zoomwin",          "git://github.com/vim-scripts/ZoomWin.git"
-vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
+# vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
@@ -155,7 +158,7 @@ vim_plugin_task "vim-coffee-script","git://github.com/kchmck/vim-coffee-script.g
 vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
-vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
+# vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
 #vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
 #  sh "gem install github-markup redcarpet"
@@ -249,7 +252,7 @@ end
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."
-  system "vim -e -s <<-EOF\n:helptags ~/.vim/doc\n:quit\nEOF"
+  system "vim -e -s <<-EOF\n:helptags ~/.vim/janus_runtime/doc\n:quit\nEOF"
 end
 
 desc "link vimrc to ~/.vimrc"
