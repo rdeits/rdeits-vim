@@ -2,7 +2,6 @@ set nocompatible
 
 set runtimepath+=$HOME/.vim/extras
 
-set number
 set ruler
 syntax on
 
@@ -10,12 +9,12 @@ syntax on
 set encoding=utf-8
 
 " Whitespace stuff
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set list listchars=tab:\ \ ,trail:·
+" set nowrap
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
+" set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set hlsearch
@@ -236,10 +235,12 @@ endif
 " Convert outline format to LaTeX
 command Texify !python $HOME/.vim/scripts/texify.py % 
 
-" LilyPond compilation and editing
-filetype off
-set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/
-filetype on
+if has("macunix")
+    " LilyPond compilation and editing
+    filetype off
+    set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/
+    filetype on
+endif
  
 " Calculate the number of screen lines needed to display a file with folds at
 " the given fold_level. This is used to set the initial fold level of a file
