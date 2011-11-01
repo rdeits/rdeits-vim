@@ -1,6 +1,3 @@
-runtime_dir = "janus_runtime"
-directory(runtime_dir)
-Dir.chdir(runtime_dir)
 module VIM
   Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
 end
@@ -252,7 +249,7 @@ end
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."
-  system "vim -e -s <<-EOF\n:helptags ~/.vim/janus_runtime/doc\n:quit\nEOF"
+  system "vim -e -s <<-EOF\n:helptags ~/.vim/doc\n:quit\nEOF"
 end
 
 desc "link vimrc to ~/.vimrc"

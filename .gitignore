@@ -1,4 +1,8 @@
 .netrwhist
 .VimballRecord
-janus_runtime/
 .DS_Store
+
+colors
+doc
+plugin
+
