@@ -2,7 +2,20 @@
 .VimballRecord
 .DS_Store
 
-colors
-doc
-plugin
+/after
+/autoload
+/backup
+/colors
+/doc
+/ftdetect
+/ftplugin
+/indent
+/nerdtree_plugin
+/plugin
+/ruby
+/snippets
+/syntax
+/syntax_checkers
+/tmp
+
 
