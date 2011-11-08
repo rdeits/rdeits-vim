@@ -147,7 +147,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let w:buftabs_enabled = 0
-let w:original_statusline = matchstr(&statusline, "%=.*")
+" let w:original_statusline = matchstr(&statusline, "%=.*")
 
 "
 " Don't bother when in diff mode
@@ -197,9 +197,9 @@ function! Buftabs_show(deleted_buf)
 		let w:from = 0
 	endif
 
-	if ! exists("w:buftabs_enabled")
-		return
-	endif
+" 	if ! exists("w:buftabs_enabled")
+" 		return
+	" endif
 
 	let l:buftabs_marker_modified = "!"
 	if exists("g:buftabs_marker_modified")
@@ -308,13 +308,15 @@ function! Buftabs_show(deleted_buf)
 	" Show the list. The buftabs_in_statusline variable determines of the list
 	" is displayed in the command line (volatile) or in the statusline
 	" (persistent)
+	" echo &l:statusline
 
 	if exists("g:buftabs_in_statusline")
 		" Only overwrite the statusline if buftabs#statusline() has not been
 		" used to specify a location
-		if match(&statusline, "%{buftabs#statusline()}") == -1
-			let &l:statusline = s:list . w:original_statusline
-		end
+		" if match(&statusline, "%{buftabs#statusline()}") == -1
+			" let &l:statusline = s:list . w:original_statusline
+			let &l:statusline = s:list
+		" end
 	else
 		redraw
 		call s:Pecho(s:list)
@@ -339,8 +341,9 @@ endfunction
 " buffers
 "
 
+" autocmd VimEnter * call Buftabs_enable()
 autocmd VimEnter * call Buftabs_enable()
-autocmd VimEnter,BufNew,BufEnter,BufWritePost * call Buftabs_show(-1)
+autocmd VimEnter,BufNew,BufEnter,BufWritePost,WinEnter * call Buftabs_show(-1)
 autocmd BufDelete * call Buftabs_show(expand('<abuf>'))
 if version >= 700
 	autocmd InsertLeave,VimResized * call Buftabs_show(-1)
