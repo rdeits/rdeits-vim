@@ -311,12 +311,14 @@ function! Buftabs_show(deleted_buf)
 	" echo &l:statusline
 
 	if exists("g:buftabs_in_statusline")
-		" Only overwrite the statusline if buftabs#statusline() has not been
-		" used to specify a location
-		" if match(&statusline, "%{buftabs#statusline()}") == -1
-			" let &l:statusline = s:list . w:original_statusline
-			let &l:statusline = s:list
-		" end
+		if getbufvar(bufnr('%'), "&modifiable")
+			" Only overwrite the statusline if buftabs#statusline() has not been
+			" used to specify a location
+			" if match(&statusline, "%{buftabs#statusline()}") == -1
+				" let &l:statusline = s:list . w:original_statusline
+				let &l:statusline = s:list
+			" end
+		end
 	else
 		redraw
 		call s:Pecho(s:list)
