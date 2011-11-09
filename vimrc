@@ -143,7 +143,8 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Turn off the stupid bell
 set noerrorbells
-set novisualbell
+set visualbell
+" set novisualbell
 set t_vb=
 
 " Turn on line numbers
@@ -320,6 +321,27 @@ let g:fuf_modesDisable = ['mrucmd']
 
 " Binding for nicer buffer closing
 map <M-w> <Plug>BufKillBd
+
+if has("python")
+	" This is a nifty function for creating bulleted lists and other things. When
+	" you press shift-enter at the end of a line, it duplicates everything before
+	" the first letter or digit on that line onto the next line. 
+	python << endpython
+	import vim
+	import re
+	def list_newline():
+		(row,col) = vim.current.window.cursor
+		line = vim.current.buffer[row-1] 
+		pattern = re.split(r'[a-zA-Z0-9]',line,1)[0]
+		vim.current.buffer[row-1]+="\n"
+		vim.current.buffer[row:row] = [pattern]
+		vim.current.window.cursor = (row+1,len(pattern))
+		vim.command('star!') # enter insert mode
+	endpython
+
+	imap <buffer> <S-cr> <Esc>:python list_newline()<cr>
+	map <buffer> <S-cr> :python list_newline()<cr>
+endif
 
 
 " Include user's local vim config
