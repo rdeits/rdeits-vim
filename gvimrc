@@ -62,9 +62,6 @@ if has("gui_macvim")
   imap <Leader>= <Esc> <C-w>=
 endif
 
-" Don't beep
-set visualbell
-
 " Start without the toolbar
 set guioptions-=T
 
@@ -229,7 +226,6 @@ if exists("loaded_nerd_tree")
   cabbrev Edit! e!
 endif
 
-set novisualbell
 " colorscheme osx_like
 colorscheme desert-mod
 if has("macunix")
