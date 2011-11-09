@@ -346,6 +346,8 @@ imap <S-cr> <Esc>:python list_newline()<cr>
 map <S-cr> :python list_newline()<cr>
 endif
 
+" Generate a handy tasklist
+noremap <Leader>tl :noautocmd vimgrep /TODO/j %<CR>:cw<CR>
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
