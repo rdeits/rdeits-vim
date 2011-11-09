@@ -143,8 +143,11 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Turn off the stupid bell
 set noerrorbells
-set visualbell
-" set novisualbell
+if has("macunix")
+	set visualbell
+else
+	set novisualbell
+endif
 set t_vb=
 
 " Turn on line numbers
@@ -339,8 +342,8 @@ def list_newline():
 	vim.command('star!') # enter insert mode
 endpython
 
-imap <buffer> <S-cr> <Esc>:python list_newline()<cr>
-map <buffer> <S-cr> :python list_newline()<cr>
+imap <S-cr> <Esc>:python list_newline()<cr>
+map <S-cr> :python list_newline()<cr>
 endif
 
 
