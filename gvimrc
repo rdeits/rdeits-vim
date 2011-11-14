@@ -20,7 +20,6 @@ if has("gui_macvim")
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
-
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
   vmap <D-[> <gv
@@ -58,8 +57,8 @@ if has("gui_macvim")
   imap <D-M-Left> <C-w>h
 
   " Adjust viewports to the same size
-  map <Leader>= <C-w>=
-  imap <Leader>= <Esc> <C-w>=
+  " map <Leader>= <C-w>=
+  " imap <Leader>= <Esc> <C-w>=
 endif
 
 " Start without the toolbar
