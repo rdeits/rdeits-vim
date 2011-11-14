@@ -271,8 +271,6 @@ function ToggleTreeAndCols()
     endif
 endfunction
 
-unmap <leader>m=
-
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
 

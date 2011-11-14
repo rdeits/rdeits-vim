@@ -319,7 +319,7 @@ let mapleader = ","
 " Fuzzyfinder customizations
 map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
 map <leader>b :FufBuffer<C-M>
-map <leader>m :FufMruFile<C-M>
+map <leader>mr :FufMruFile<C-M>
 let g:fuf_modesDisable = ['mrucmd']
 
 " Binding for nicer buffer closing
