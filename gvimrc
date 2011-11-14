@@ -168,6 +168,7 @@ function ChangeDirectory(dir, ...)
   let stay = exists("a:1") ? a:1 : 1
 
   NERDTree
+  set columns=121
 
   if !stay
     wincmd p
@@ -220,9 +221,9 @@ if exists("loaded_nerd_tree")
   call s:DefineCommand("cd", "ChangeDirectory")
   call s:DefineCommand("touch", "Touch")
   call s:DefineCommand("rm", "Remove")
-  call s:DefineCommand("e", "Edit")
+  call s:DefineCommand("E", "Edit")
   call s:DefineCommand("mkdir", "Mkdir")
-  cabbrev Edit! e!
+  cabbrev Edit! E!
 endif
 
 " colorscheme osx_like
@@ -244,8 +245,10 @@ vnoremap <BS> ""di
 
 if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
     set columns=90
+	let g:miniBufExplNERDTreeMode=0
 else
     set columns=121
+	let g:miniBufExplNERDTreeMode=1
 endif
 
 " Use visual mode, not select mode, when selecting with the mouse
@@ -256,12 +259,22 @@ function ToggleTreeAndCols()
     NERDTreeToggle
     if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
         set columns=90
+		let g:miniBufExplNERDTreeMode=0
+		let g:miniBufExplorerMoreThanOne=2
+		CMiniBufExplorer
     else
         set columns=121
+		let g:miniBufExplNERDTreeMode=1
+		let g:miniBufExplorerMoreThanOne=0
+		CMiniBufExplorer
+		MiniBufExplorer
     endif
 endfunction
 
 unmap <leader>m=
+
+" MiniBufExplorer config
+hi link MBEVisibleChangedActive Search
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))

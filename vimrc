@@ -349,6 +349,11 @@ endif
 " Generate a handy tasklist
 noremap <Leader>tl :noautocmd vimgrep /TODO/j %<CR>:cw<CR>
 
+" MiniBuf Explorer configuration
+let g:miniBufExplUseSingleClick == 1
+let g:miniBufExplModSelTarget=1
+let g:NERDTreeMouseMode = 2
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
