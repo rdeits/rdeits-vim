@@ -1647,6 +1647,8 @@ function! <SID>AutoUpdate(delBufNum,currBufName)
   " Only allow updates when the AutoUpdate flag is set
   " this allows us to stop updates on startup.
   if g:miniBufExplorerAutoUpdate == 1
+    " Save the previous window number
+    let l:oldPreviousWindow = winnr("#")
     " Only show MiniBufExplorer if we have a real buffer
     if ((g:miniBufExplorerMoreThanOne == 0) || (bufnr('%') != -1 && bufname('%') != ""))
       if <SID>HasEligibleBuffers(a:delBufNum) == 1
@@ -1667,6 +1669,8 @@ function! <SID>AutoUpdate(delBufNum,currBufName)
 
         " go back to the working buffer
         if (bufname('%') == '-MiniBufExplorer-')
+          wincmd p
+          exec l:oldPreviousWindow . ' wincmd w'
           wincmd p
         endif
       else

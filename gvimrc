@@ -87,6 +87,9 @@ function s:CloseIfOnlyNerdTreeLeft()
     if bufwinnr(t:NERDTreeBufName) != -1
       if winnr("$") == 1
         q
+	  elseif winnr("$") == 2
+		q
+		q
       endif
     endif
   endif
