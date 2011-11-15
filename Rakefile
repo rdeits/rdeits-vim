@@ -155,6 +155,8 @@ vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "puppet",           "git://github.com/ajf/puppet-vim.git"
 vim_plugin_task "scala",            "git://github.com/bdd/vim-scala.git"
 vim_plugin_task "fuzzy-finder",     "git://github.com/vim-scripts/FuzzyFinder.git"
+vim_plugin_task "bufkill", "git://github.com/vim-scripts/bufkill.vim.git"
+
 # vim_plugin_task "gist-vim",         "git://github.com/mattn/gist-vim.git"
 
 #vim_plugin_task "hammer",           "git://github.com/robgleeson/hammer.vim.git" do
