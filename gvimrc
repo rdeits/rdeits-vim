@@ -170,8 +170,8 @@ function ChangeDirectory(dir, ...)
   execute "cd " . fnameescape(a:dir)
   let stay = exists("a:1") ? a:1 : 1
 
-  NERDTree
-  set columns=121
+  " NERDTree
+  " set columns=121
 
   if !stay
     wincmd p
