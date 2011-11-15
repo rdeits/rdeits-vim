@@ -238,7 +238,7 @@ if has("macunix")
 else
     " set guifont="Ubuntu Mono 11"
     set guifont="DejaVu Sans Mono 10"
-    set lines=45
+    set lines=55
     map <M-/> <plug>NERDCommenterToggle<CR>
     imap <M-/> <Esc><plug>NERDCommenterToggle<CR>i
 endif
