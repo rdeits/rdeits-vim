@@ -201,6 +201,11 @@ if has("macunix")
 	" Use option as a meta key
 	set macmeta
 	imap <M-a> M-a
+else
+	" Cut, copy, and paste using Meta (alt) key
+	nmap <M-v> "+p
+	vmap <M-x> "+x
+	vmap <M-c> "+y
 endif
 
 " MRU Most recently used file configuration
