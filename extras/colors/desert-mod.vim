@@ -1,4 +1,5 @@
 " Vim color file
+" Tweaked by Robin Deits, November 2011
 " Maintainer:	Hans Fugal <hans@fugal.net>
 " Last Change:	$Date: 2004/06/13 19:30:30 $
 " Last Change:	$Date: 2004/06/13 19:30:30 $
