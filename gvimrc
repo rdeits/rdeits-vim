@@ -83,8 +83,6 @@ endif
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function s:CloseIfOnlyNerdTreeLeft()
-	return
-  if exists("t:NERDTreeBufName")
 	for i in range(1, winnr("$"))
 		let l:buffer_name = bufname(winbufnr(i))
 		if l:buffer_name != t:NERDTreeBufName && l:buffer_name != "-MiniBufExplorer-"
@@ -102,7 +100,6 @@ function s:CloseIfOnlyNerdTreeLeft()
 	"     q
     "   endif
     " endif
-  endif
 endfunction
 
 " If the parameter is a directory, cd into it
