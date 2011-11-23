@@ -260,14 +260,17 @@ function ToggleTreeAndCols()
     NERDTreeToggle
     if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
         set columns=90
-		let g:miniBufExplNERDTreeMode=0
-		let g:miniBufExplorerMoreThanOne=3
 		CMiniBufExplorer
+		let g:miniBufExplNERDTreeMode=0
+		let g:miniBufExplorerMoreThanOne=2
+        let g:miniBufExplVSplit = 0
+		MiniBufExplorer
     else
         set columns=121
+		CMiniBufExplorer
 		let g:miniBufExplNERDTreeMode=1
 		let g:miniBufExplorerMoreThanOne=0
-		CMiniBufExplorer
+        let g:miniBufExplVSplit = 31
 		MiniBufExplorer
     endif
 endfunction
