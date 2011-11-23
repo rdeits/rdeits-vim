@@ -83,15 +83,25 @@ endif
 " Close all open buffers on entering a window if the only
 " buffer that's left is the NERDTree buffer
 function s:CloseIfOnlyNerdTreeLeft()
+	return
   if exists("t:NERDTreeBufName")
-    if bufwinnr(t:NERDTreeBufName) != -1
-      if winnr("$") == 1
-        q
-	  elseif winnr("$") == 2
-		q
-		q
-      endif
-    endif
+	for i in range(1, winnr("$"))
+		let l:buffer_name = bufname(winbufnr(i))
+		if l:buffer_name != t:NERDTreeBufName && l:buffer_name != "-MiniBufExplorer-"
+			return
+		end
+	endfor
+	echo "quitting"
+	q
+	q
+    " if bufwinnr(t:NERDTreeBufName) != -1
+    "   if winnr("$") == 1
+    "     q
+	"   elseif winnr("$") == 2
+	"     q
+	"     q
+    "   endif
+    " endif
   endif
 endfunction
 
@@ -231,18 +241,6 @@ endif
 
 " colorscheme osx_like
 colorscheme desert-mod
-if has("macunix")
-    " Transparency
-    set transparency=3
-    set guifont=DejaVu\ Sans\ Mono:h12
-else
-    " set guifont="Ubuntu Mono 11"
-    set guifont="DejaVu Sans Mono 10"
-    set lines=55
-    map <M-/> <plug>NERDCommenterToggle<CR>
-    imap <M-/> <Esc><plug>NERDCommenterToggle<CR>i
-endif
-
 " Map backspace to d (to delete characters) in visual mode
 vnoremap <BS> ""di
 
@@ -263,7 +261,7 @@ function ToggleTreeAndCols()
     if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
         set columns=90
 		let g:miniBufExplNERDTreeMode=0
-		let g:miniBufExplorerMoreThanOne=2
+		let g:miniBufExplorerMoreThanOne=3
 		CMiniBufExplorer
     else
         set columns=121
@@ -276,6 +274,8 @@ endfunction
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
+
+set t_vb=0
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))

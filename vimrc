@@ -125,9 +125,6 @@ color desert
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
 
-" MacVIM shift+arrow-keys behavior (required in .vimrc)
-let macvim_hig_shift_movement = 1
-
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
@@ -143,12 +140,7 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Turn off the stupid bell
 set noerrorbells
-if has("macunix")
-	set visualbell
-else
-	set novisualbell
-endif
-set t_vb=
+set t_vb=0
 
 " Turn on line numbers
 set number
@@ -191,18 +183,6 @@ imap <F5> <Esc>:e %<cr>
 set noswapfile
 set nobackup
 
-" Various mac customizations
-if has("macunix")
-	" Make it easier to open the current folder in Finder (mac only)
-	map <C-o> :cd `dirname %`<cr>:silent !open .<cr>
-	imap <C-o> <Esc>:cd `dirname %`<cr>:silent !open .<cr>i
-	" Set path for exuberant ctags utility
-	let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-	" Use option as a meta key
-	set macmeta
-	imap <M-a> M-a
-endif
-
 " MRU Most recently used file configuration
 let MRU_Max_Entries = 1000
 
@@ -239,13 +219,6 @@ endif
 " Convert outline format to LaTeX
 command Texify !python $HOME/.vim/scripts/texify.py % 
 
-if has("macunix")
-    " LilyPond compilation and editing
-    filetype off
-    set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/
-    filetype on
-endif
- 
 " Calculate the number of screen lines needed to display a file with folds at
 " the given fold_level. This is used to set the initial fold level of a file
 " in order to display the entire file on screen if possible without closing
@@ -352,7 +325,17 @@ noremap <Leader>tl :noautocmd vimgrep /TODO/j %<CR>:cw<CR>
 " MiniBuf Explorer configuration
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplModSelTarget=1
+let g:miniBufExplorerMoreThanOne=3
 let g:NERDTreeMouseMode = 2
+
+" OS-specific configurations:
+if has("macunix")
+	runtime extras/config/macunix.vim
+elseif has("gui_gnome")
+	runtime extras/config/gui_gnome.vim
+elseif has("win32")
+	runtime extras/config/win32.vim
+endif
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
