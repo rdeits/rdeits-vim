@@ -85,7 +85,7 @@ endif
 function s:CloseIfOnlyNerdTreeLeft()
 	for i in range(1, winnr("$"))
 		let l:buffer_name = bufname(winbufnr(i))
-		if l:buffer_name != t:NERDTreeBufName && l:buffer_name != "-MiniBufExplorer-"
+		if (!exists("t:NERDTreeBufName") || l:buffer_name != t:NERDTreeBufName) && l:buffer_name != "-MiniBufExplorer-"
 			return
 		end
 	endfor
