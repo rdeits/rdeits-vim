@@ -1141,6 +1141,7 @@ function! <SID>ResizeWindow()
       call <SID>DEBUG('ResizeWindow to '.l:newWidth.' columns',9)
       exec('vertical resize '.l:newWidth)
     endif
+    normal gg
 
   endif
   
