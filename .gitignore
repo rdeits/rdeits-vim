@@ -1,7 +1,7 @@
 .netrwhist
 .VimballRecord
 .DS_Store
-bundle/L9/
+bundle/l9/
 bundle/ack.vim/
 bundle/bufkill/
 bundle/fuzzy-finder/
@@ -11,4 +11,4 @@ bundle/supertab/
 bundle/taskpaper/
 bundle/vim-latex/
 bundle/zoomwin/
-bundle/conque/
+bundle/conque*
