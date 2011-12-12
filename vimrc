@@ -1,6 +1,7 @@
 set nocompatible
 
-set runtimepath+=$HOME/.vim/extras
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 set ruler
 syntax on
@@ -8,12 +9,6 @@ syntax on
 " Set encoding
 set encoding=utf-8
 
-" Whitespace stuff
-" set nowrap
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
@@ -38,15 +33,8 @@ set noequalalways
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
-" Command-T configuration
-let g:CommandTMaxHeight=20
-
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
-
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <C-\> :tnext<CR>
 
 " Remember last location in file
 if has("autocmd")
@@ -102,10 +90,6 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" Enable syntastic syntax checking
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
-
 " gist-vim defaults
 if has("mac")
   let g:gist_clip_command = 'pbcopy'
@@ -118,9 +102,6 @@ let g:gist_open_browser_after_post = 1
 " Use modeline overrides
 set modeline
 set modelines=10
-
-" Default color scheme
-color desert
 
 " Turn off jslint errors by default
 let g:JSLintHighlightErrorLine = 0
@@ -257,8 +238,6 @@ endfunction
 
 " autocmd BufWinEnter * call FoldToScreen()
 
-
-
 " " Configuration for vim-latex
 " " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -330,14 +309,9 @@ let g:NERDTreeMouseMode = 2
 
 " OS-specific configurations:
 if has("macunix")
-	runtime extras/config/macunix.vim
+	runtime config/macunix.vim
 elseif has("gui_gnome")
-	runtime extras/config/gui_gnome.vim
+	runtime config/gui_gnome.vim
 elseif has("win32")
-	runtime extras/config/win32.vim
-endif
-
-" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+	runtime config/win32.vim
 endif
