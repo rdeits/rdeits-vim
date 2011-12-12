@@ -1,17 +1,11 @@
 # Stolen from https://github.com/mislav/vimfiles and https://github.com/carlhuda/janus/blob/master/Rakefile
 
-module VIM
-  Dirs = %w[ after autoload doc plugin ruby snippets syntax ftdetect ftplugin colors indent backup ]
-end
-
 def vim_plugin_task(name, repo=nil)
-  cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("bundle/#{name}")
-  subdirs = VIM::Dirs
 
   namespace(name) do
     if repo
-      file dir => "bundle" do
+      file dir do
         if repo =~ /git$/ or repo =~ /^git:/
           sh "git clone #{repo} #{dir}"
 
@@ -119,7 +113,13 @@ vim_plugin_task "vim-latex", "git://vim-latex.git.sourceforge.net/gitroot/vim-la
 vim_plugin_task "taskpaper", "git://github.com/vim-scripts/taskpaper.vim.git"
 vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
 
-task :link do
+desc "Update the documentation"
+task :update_docs do
+  puts "Updating VIM Documentation..."
+  system "vim -e -s <<-EOF\n:Helptags\n:quit\nEOF"
+end
+
+task :link_vimrc do
   %w[vimrc gvimrc].each do |script|
     dotfile = File.join(ENV['HOME'], ".#{script}")
     if File.exist? dotfile
@@ -129,3 +129,9 @@ task :link do
     end
   end
 end
+
+task :default => [
+  :update_docs,
+  :link_vimrc
+]
+
