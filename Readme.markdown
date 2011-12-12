@@ -1,6 +1,6 @@
 Installation
 ============
 
-	git clone git://github.com/carlhuda/janus.git ~/.vim
+	git clone git://github.com/rdeits/rdeits-vim.git ~/.vim
 	cd ~/.vim
 	rake
