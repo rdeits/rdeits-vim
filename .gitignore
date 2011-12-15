@@ -1,3 +1,14 @@
 .netrwhist
 .VimballRecord
 .DS_Store
+bundle/L9/
+bundle/ack.vim/
+bundle/bufkill/
+bundle/fuzzy-finder/
+bundle/nerdcommenter/
+bundle/pathogen/
+bundle/supertab/
+bundle/taskpaper/
+bundle/vim-latex/
+bundle/zoomwin/
+bundle/conque/
