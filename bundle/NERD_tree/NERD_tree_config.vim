@@ -156,6 +156,7 @@ endif
 if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
     set columns=90
 	let g:miniBufExplNERDTreeMode=0
+	CMiniBufExplorer
 else
     set columns=121
 	let g:miniBufExplNERDTreeMode=1
