@@ -304,7 +304,7 @@ noremap <Leader>tl :noautocmd vimgrep /TODO/j %<CR>:cw<CR>
 " MiniBuf Explorer configuration
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplModSelTarget=1
-let g:miniBufExplorerMoreThanOne=3
+" let g:miniBufExplorerMoreThanOne=3
 let g:NERDTreeMouseMode = 2
 
 " OS-specific configurations:
