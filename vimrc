@@ -31,7 +31,6 @@ set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
@@ -115,8 +114,6 @@ set showcmd
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeChDirMode=2
-
-map <Leader>n :NERDTreeToggle<CR>
 
 
 " Turn off the stupid bell
@@ -302,7 +299,7 @@ endif
 noremap <Leader>tl :noautocmd vimgrep /TODO/j %<CR>:cw<CR>
 
 " MiniBuf Explorer configuration
-let g:miniBufExplUseSingleClick = 1
+let g:miniBufExplUseSingleClick = 0
 let g:miniBufExplModSelTarget=1
 " let g:miniBufExplorerMoreThanOne=3
 let g:NERDTreeMouseMode = 2
