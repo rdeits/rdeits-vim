@@ -303,6 +303,7 @@ let g:miniBufExplUseSingleClick = 0
 let g:miniBufExplModSelTarget=1
 " let g:miniBufExplorerMoreThanOne=3
 let g:NERDTreeMouseMode = 2
+let g:miniBufExplorerMoreThanOne = 10000
 
 " OS-specific configurations:
 if has("macunix")

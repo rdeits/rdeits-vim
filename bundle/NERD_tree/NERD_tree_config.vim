@@ -170,7 +170,7 @@ function ToggleTreeAndCols()
         set columns=90
 		CMiniBufExplorer
 		let g:miniBufExplNERDTreeMode=0
-		let g:miniBufExplorerMoreThanOne=2
+		let g:miniBufExplorerMoreThanOne=10000
         let g:miniBufExplVSplit = 0
 		" MiniBufExplorer
     else

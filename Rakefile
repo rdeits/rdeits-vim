@@ -112,6 +112,7 @@ vim_plugin_task "bufkill", "git://github.com/vim-scripts/bufkill.vim.git"
 vim_plugin_task "vim-latex", "git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex"
 vim_plugin_task "taskpaper", "git://github.com/vim-scripts/taskpaper.vim.git"
 vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
+vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
 
 desc "Update the documentation"
 task :update_docs do
