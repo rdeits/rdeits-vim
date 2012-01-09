@@ -259,8 +259,21 @@ let g:tex_flavor='latex'
 let g:buftabs_only_basename=1
 let g:buftabs_in_statusline=1
 let g:buftabs_active_highlight_group="Visual"
-noremap <C-left> :bprev<CR>
-noremap <C-right> :bnext<CR>
+noremap <C-left> :call PrevBuffer()<CR>
+noremap <C-right> :call NextBuffer()<CR>
+
+function NextBuffer()
+	if &buftype!='nofile'
+		bnext
+	endif
+endfunction
+
+function PrevBuffer()
+	if &buftype!='nofile'
+		bprevious
+	endif
+endfunction
+
 
 " Set leader to , (comma) for easier reaching
 let mapleader = ","
