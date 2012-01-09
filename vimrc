@@ -12,7 +12,7 @@ set encoding=utf-8
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
-set hlsearch
+set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
