@@ -12,5 +12,6 @@ bundle/taskpaper/
 bundle/vim-latex/
 bundle/zoomwin/
 bundle/conque*
+bundle/tagbar
 plugin/ack*
 plugin/NERD_commenter*

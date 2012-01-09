@@ -2,7 +2,7 @@
 if exists("loaded_nerd_tree")
   autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
   autocmd FocusGained * call s:UpdateNERDTree()
-  " autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+  autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 endif
 
 " Close all open buffers on entering a window if the only
@@ -10,11 +10,12 @@ endif
 function s:CloseIfOnlyNerdTreeLeft()
 	for i in range(1, winnr("$"))
 		let l:buffer_name = bufname(winbufnr(i))
-		if (!exists("t:NERDTreeBufName") || l:buffer_name != t:NERDTreeBufName) && l:buffer_name != "-MiniBufExplorer-"
+		if (!exists("t:NERDTreeBufName") || (l:buffer_name != t:NERDTreeBufName) && l:buffer_name != "-MiniBufExplorer-" && l:buffer_name != "__Tagbar__")
 			return
-		end
+		endif
 	endfor
 	echo "quitting"
+	q
 	q
 	q
 endfunction
@@ -172,9 +173,11 @@ function ToggleTreeAndCols()
 		let g:miniBufExplNERDTreeMode=0
 		let g:miniBufExplorerMoreThanOne=10000
         let g:miniBufExplVSplit = 0
+		TagbarClose
 		" MiniBufExplorer
     else
-        set columns=121
+        set columns=160
+		TagbarOpen
 		CMiniBufExplorer
 		let g:miniBufExplNERDTreeMode=1
 		let g:miniBufExplorerMoreThanOne=0

@@ -113,6 +113,7 @@ vim_plugin_task "vim-latex", "git://vim-latex.git.sourceforge.net/gitroot/vim-la
 vim_plugin_task "taskpaper", "git://github.com/vim-scripts/taskpaper.vim.git"
 vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
 vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
+vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 
 desc "Update the documentation"
 task :update_docs do
