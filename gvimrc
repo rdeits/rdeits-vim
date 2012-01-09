@@ -65,7 +65,8 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-" color ir_black
+color ir_black
+" colorscheme desert-mod
 
 " ConqueTerm wrapper
 function StartTerm()
@@ -74,7 +75,6 @@ function StartTerm()
 endfunction
 
 
-colorscheme desert-mod
 " Map backspace to d (to delete characters) in visual mode
 vnoremap <BS> ""di
 
