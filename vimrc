@@ -318,6 +318,9 @@ let g:miniBufExplModSelTarget=1
 let g:NERDTreeMouseMode = 2
 let g:miniBufExplorerMoreThanOne = 10000
 
+" Tagbar customizatoin
+nmap <F8> :TagbarToggle<CR>
+
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
