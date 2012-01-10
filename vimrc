@@ -32,9 +32,6 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -321,6 +318,7 @@ let g:miniBufExplorerMoreThanOne = 10000
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
+
 
 " OS-specific configurations:
 if has("macunix")
