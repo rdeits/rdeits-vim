@@ -64,7 +64,9 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 set backspace=indent,eol,start
 
 " load the plugin and indent settings for the detected filetype
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -233,9 +235,6 @@ endfunction
 " autocmd BufWinEnter * call FoldToScreen()
 
 " " Configuration for vim-latex
-" " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-" 
 " " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " " can be called correctly.
 set shellslash
@@ -244,9 +243,6 @@ set shellslash
 " " search in a singe file. This will confuse Latex-Suite. Set your grep
 " " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-" 
-" " OPTIONAL: This enables automatic indentation as you type.
-filetype indent on
 " 
 " " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -318,7 +314,6 @@ let g:miniBufExplorerMoreThanOne = 10000
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
-
 
 " OS-specific configurations:
 if has("macunix")
