@@ -69,6 +69,7 @@ set guioptions-=T
 " colorscheme desert-mod
 let moria_style='dark'
 color moria
+set cursorline
 
 " ConqueTerm wrapper
 function StartTerm()
