@@ -320,6 +320,7 @@ let g:miniBufExplorerMoreThanOne = 10000
 
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
+let g:tagbar_expand=1
 
 " OS-specific configurations:
 if has("macunix")
