@@ -164,31 +164,19 @@ else
 endif
 
 map <Leader>n :call ToggleTree()<CR>
-map <leader>l :call ToggleTags()<CR>
+map <leader>l :TagbarToggle<CR>
 
 function ToggleTree()
 	MiniBufExplorer
     NERDTreeToggle
     if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
-		if bufwinnr("__Tagbar__") != -1
-			TagbarClose
-			set columns=90
-			TagbarOpen
-		else
-			set columns=90
-		endif
+		let &columns -= 31
 		CMiniBufExplorer
 		let g:miniBufExplNERDTreeMode=0
 		let g:miniBufExplorerMoreThanOne=10000
         let g:miniBufExplVSplit = 0
     else
-		if bufwinnr("__Tagbar__") != -1
-			TagbarClose
-			set columns=121
-			TagbarOpen
-		else
-			set columns=121
-		endif
+		let &columns += 31
 		CMiniBufExplorer
 		let g:miniBufExplNERDTreeMode=1
 		let g:miniBufExplorerMoreThanOne=0
