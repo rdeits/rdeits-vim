@@ -1386,6 +1386,7 @@ function! <SID>BuildBufferList(delBufNum, updateBufList, currBufName)
 
         " Establish the tab's content, including the differentiating root
         " dir if neccessary
+        let l:prefix = ''
         let l:tab = '['
         if g:miniBufExplShowBufNumbers == 1
             let l:tab .= l:i.':'
@@ -1401,21 +1402,26 @@ function! <SID>BuildBufferList(delBufNum, updateBufList, currBufName)
             let l:tab .= s:bufPathPrefix.l:bufSplitPath[-1].']'
         endif
 
-        " If the buffer is open in a window mark it
-        if bufwinnr(l:i) != -1
-            let l:tab .= '*'
-        endif
-
-        " If the buffer is modified then mark it
-        if(getbufvar(l:i, '&modified') == 1)
-            let l:tab .= '+'
-        endif
-
         " If the buffer matches the)current buffer name, then  mark it
         call <SID>DEBUG('l:i is '.l:i.' and l:CurrBufName is '.l:CurrBufName,10)
         if(l:i == l:CurrBufName)
-            let l:tab .= '!'
+            let l:prefix .= '>'
+        " If the buffer is open in a window mark it
+        elseif bufwinnr(l:i) != -1
+            let l:prefix .= '*'
+        else
+            let l:prefix .= ' '
         endif
+
+
+        " If the buffer is modified then mark it
+        if(getbufvar(l:i, '&modified') == 1)
+            let l:prefix .= '+'
+        else
+            let l:prefix .= ' '
+        endif
+
+        let l:tab = l:prefix . l:tab
 
         let l:maxTabWidth = <SID>Max(strlen(l:tab), l:maxTabWidth)
         call add(l:tabList, l:tab)
