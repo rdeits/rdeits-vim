@@ -65,8 +65,10 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color ir_black
+" color ir_black
 " colorscheme desert-mod
+let moria_style='dark'
+color moria
 
 " ConqueTerm wrapper
 function StartTerm()
