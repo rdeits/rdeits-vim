@@ -117,7 +117,7 @@ let g:NERDTreeChDirMode=2
 
 " Turn off the stupid bell
 set noerrorbells
-set t_vb=0
+set t_vb=
 
 " Turn on line numbers
 set number
