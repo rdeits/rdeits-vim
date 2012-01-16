@@ -1,5 +1,4 @@
 set nocompatible
-
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
@@ -249,9 +248,6 @@ set grepprg=grep\ -nH\ $*
 " " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-let g:buftabs_only_basename=1
-let g:buftabs_in_statusline=1
-let g:buftabs_active_highlight_group="Visual"
 noremap <C-left> :call PrevBuffer()<CR>
 noremap <C-right> :call NextBuffer()<CR>
 
@@ -314,6 +310,10 @@ let g:miniBufExplorerMoreThanOne = 10000
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
+
+" Supertab configuration
+let g:SuperTabDefaultCompletionType = '<c-x><c-i>'
+let g:SuperTabContextDefaultCompletionType = "context"
 
 " OS-specific configurations:
 if has("macunix")
