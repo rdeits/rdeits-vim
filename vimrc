@@ -312,6 +312,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
 
 " Supertab configuration
+set omnifunc=syntaxcomplete#Complete
 let g:SuperTabDefaultCompletionType = '<c-x><c-i>'
 let g:SuperTabContextDefaultCompletionType = "context"
 
