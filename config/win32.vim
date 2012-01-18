@@ -8,4 +8,3 @@ map <M-/> <plug>NERDCommenterToggle<CR>
 imap <M-/> <Esc><plug>NERDCommenterToggle<CR>i
 set visualbell
 set t_vb=
-

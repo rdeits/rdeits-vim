@@ -69,7 +69,7 @@ set guioptions-=T
 " color ir_black
 " colorscheme desert-mod
 let moria_style='dark'
-let g:moria_monochrome=1
+let g:moria_monochrome=0
 color moria
 set cursorline
 
@@ -93,3 +93,4 @@ hi link MBEVisibleChangedActive Search
 " Nerd tree configuration
 runtime NERD_tree_config.vim
 
+set t_vb=
