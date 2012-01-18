@@ -312,9 +312,11 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
 
 " Supertab configuration
-set omnifunc=syntaxcomplete#Complete
-let g:SuperTabDefaultCompletionType = '<c-x><c-i>'
-let g:SuperTabContextDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType="context"
+" let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
+set completeopt=longest,menuone
+imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
+
 
 " OS-specific configurations:
 if has("macunix")
@@ -324,3 +326,4 @@ elseif has("gui_gnome")
 elseif has("win32")
 	runtime config/win32.vim
 endif
+
