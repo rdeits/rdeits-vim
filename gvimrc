@@ -65,9 +65,11 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
+" set background=dark
 " color ir_black
 " colorscheme desert-mod
 let moria_style='dark'
+let g:moria_monochrome=1
 color moria
 set cursorline
 
