@@ -40,13 +40,14 @@ if &background == "dark"
 
         hi ColorColumn ctermbg=8 ctermfg=15 guibg=#494949 gui=none
         hi CursorColumn ctermbg=8 ctermfg=15 guibg=#404040 gui=none
-        hi CursorLine ctermbg=8 ctermfg=15 guibg=#404040 gui=none
+        " hi CursorLine ctermbg=8 ctermfg=15 guibg=#404040 gui=none
+        hi CursorLine ctermbg=8 ctermfg=15 guibg=#303030 gui=none
     elseif s:moria_style == "black"
         hi Normal ctermbg=0 ctermfg=7 guibg=#000000 guifg=#d0d0d0 gui=none
 
         hi ColorColumn ctermbg=8 ctermfg=15 guibg=#444444 gui=none
         hi CursorColumn ctermbg=8 ctermfg=15 guibg=#3a3a3a gui=none
-        hi CursorLine ctermbg=8 ctermfg=15 guibg=#3a3a3a gui=none
+		hi CursorLine ctermbg=8 ctermfg=15 guibg=#3a3a3a gui=none
     endif
     if s:moria_monochrome == 1
         hi FoldColumn ctermbg=bg guibg=bg guifg=#a0a0a0 gui=none
