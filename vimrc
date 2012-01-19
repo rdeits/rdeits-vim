@@ -308,6 +308,7 @@ let g:miniBufExplModSelTarget=1
 let g:NERDTreeMouseMode = 2
 let g:miniBufExplorerMoreThanOne = 10000
 
+
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
@@ -318,6 +319,11 @@ let g:SuperTabDefaultCompletionType="context"
 set completeopt=longest,menuone
 imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 
+" MiniBufExplorer config
+hi link MBEVisibleChangedActive Search
+
+" Nerd tree configuration
+runtime NERD_tree_config.vim
 
 " OS-specific configurations:
 if has("macunix")

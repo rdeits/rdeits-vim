@@ -155,11 +155,10 @@ if exists("loaded_nerd_tree")
 endif
 
 if !exists("t:NERDTreeBufName") || bufwinnr(t:NERDTreeBufName) == -1
-    set columns=90
+	set columns=90
 	let g:miniBufExplNERDTreeMode=0
-	CMiniBufExplorer
 else
-    set columns=121
+	set columns=121
 	let g:miniBufExplNERDTreeMode=1
 endif
 
