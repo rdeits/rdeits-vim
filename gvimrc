@@ -88,9 +88,9 @@ vnoremap <BS> ""di
 set selectmode=
 
 " MiniBufExplorer config
-hi link MBEVisibleChangedActive Search
+" hi link MBEVisibleChangedActive Search
 
 " Nerd tree configuration
-runtime NERD_tree_config.vim
+" runtime NERD_tree_config.vim
 
 set t_vb=
