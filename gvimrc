@@ -91,6 +91,6 @@ set selectmode=
 " hi link MBEVisibleChangedActive Search
 
 " Nerd tree configuration
-" runtime NERD_tree_config.vim
+runtime NERD_tree_config.vim
 
 set t_vb=

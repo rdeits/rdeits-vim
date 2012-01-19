@@ -322,9 +322,6 @@ imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
 
-" Nerd tree configuration
-runtime NERD_tree_config.vim
-
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
