@@ -181,6 +181,7 @@ function ToggleTree()
 		let g:miniBufExplorerMoreThanOne=0
         let g:miniBufExplVSplit = 31
 		MiniBufExplorer
+		wincmd l
     endif
 endfunction
 
