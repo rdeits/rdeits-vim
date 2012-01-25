@@ -47,9 +47,12 @@ set guioptions-=T
 " set background=dark
 " color ir_black
 " colorscheme desert-mod
-let moria_style='dark'
-let g:moria_monochrome=0
-color moria
+" let moria_style='dark'
+" let g:moria_monochrome=0
+" color moria
+set background=dark
+let g:solarized_contrast='high'
+color solarized
 set cursorline
 
 " ConqueTerm wrapper
