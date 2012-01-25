@@ -114,6 +114,8 @@ vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
 vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 
+
+# On ubuntu, this requires that you do "sudo apt-get install ruby1.8-dev" first
 vim_plugin_task "command-t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
   Dir.chdir "bundle/command-t/ruby/command-t" do
     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
