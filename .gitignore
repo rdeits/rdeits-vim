@@ -10,6 +10,6 @@ bundle/pathogen/
 bundle/vim-latex/
 bundle/conque*
 bundle/tagbar
-bundle/command-t
+bundle/command-t*
 plugin/ack*
 plugin/NERD_commenter*
