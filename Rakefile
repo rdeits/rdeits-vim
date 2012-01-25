@@ -114,6 +114,21 @@ vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
 vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 
+vim_plugin_task "command_t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
+  Dir.chdir "ruby/command-t" do
+    if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
+      sh "/usr/bin/ruby1.8 extconf.rb"
+    elsif File.exists?("/usr/bin/ruby") # prefer system rubies
+      sh "/usr/bin/ruby extconf.rb"
+    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
+      sh "rvm system ruby extconf.rb"
+    elsif `rbenv > /dev/null 2>&1` && $?.exitstatus == 0
+      sh "RBENV_VERSION=system ruby extconf.rb"
+    end
+    sh "make clean && make"
+  end
+end
+
 desc "Update the documentation"
 task :update_docs do
   puts "Updating VIM Documentation..."

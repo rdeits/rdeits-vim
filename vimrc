@@ -272,7 +272,15 @@ let mapleader = ","
 map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
 map <leader><leader> :FufBuffer<C-M>
 map <leader>mr :FufMruFile<C-M>
+map <leader>mm :FufMruFile<C-M>
 let g:fuf_modesDisable = ['mrucmd']
+" let g:fuf_previewHeight = 50
+" let g:fuf_keyPreview = '<space>'
+" let g:fuf_autoPreview = 0
+
+" Command T config
+let g:CommandTScanDotDirectories=1
+
 
 " Binding for nicer buffer closing
 map <M-w> <Plug>BufKillBd
@@ -321,6 +329,10 @@ imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
+
+if !has("gui_running")
+	color ir_black
+endif
 
 " OS-specific configurations:
 if has("macunix")
