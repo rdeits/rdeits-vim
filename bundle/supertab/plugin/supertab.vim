@@ -654,7 +654,7 @@ function! s:ContextText()
 			  return omniFunc == '&omnifunc' ? "\<c-x>\<c-o>" : "\<c-x>\<c-u>"
 		    endif
         endif
-	  return "\<c-x>\<c-I>"
+	  return "\<c-x>\<c-n>"
       endfor
     endif
   endif
