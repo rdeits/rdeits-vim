@@ -330,10 +330,6 @@ imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
 
-if !has("gui_running")
-	color ir_black
-endif
-
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
