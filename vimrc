@@ -26,7 +26,7 @@ set laststatus=2
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
+" set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
@@ -280,6 +280,14 @@ let g:fuf_modesDisable = ['mrucmd']
 
 " Command T config
 let g:CommandTScanDotDirectories=1
+let g:CommandTMaxDepth=10
+let g:CommandTMaxFiles=20000
+set wildignore+=*.o,*.obj,.git,*.pyc,.svn,*.doc,*.mp3,*.mp4,*.png,*.jpg,Desktop,Applications,Downloads,Documents,*.epub
+" let g:CommandTMatchWindowAtTop=0
+" let g:CommandTMaxHeight=10
+" let g:CommandTMatchWindowReverse=1
+" let g:CommandTMaxFiles=10000
+" let g:CommandTMaxCachedDirectories=5
 
 
 " Binding for nicer buffer closing
@@ -329,6 +337,12 @@ imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
+
+if !has("gui_running")
+	let g:solarized_termcolors=256
+	set background=dark
+	color solarized
+end
 
 " OS-specific configurations:
 if has("macunix")

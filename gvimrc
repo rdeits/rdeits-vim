@@ -12,11 +12,6 @@ if has("gui_macvim")
 	macmenu &File.New\ Tab key=<nop>
 	map <D-t> :CommandT<CR>
 	imap <D-t> <esc>:CommandT<cr>i
-	" let g:CommandTMatchWindowAtTop=0
-	" let g:CommandTMaxHeight=10
-	" let g:CommandTMatchWindowReverse=1
-	" let g:CommandTMaxFiles=10000
-	" let g:CommandTMaxCachedDirectories=5
 
 	" Command-e for ConqueTerm
 	map <D-e> :call StartTerm()<CR>

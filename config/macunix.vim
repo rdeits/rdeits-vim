@@ -16,5 +16,5 @@ set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/cu
 filetype on
 
 " Transparency
-set transparency=3
+set transparency=1
 set guifont=DejaVu\ Sans\ Mono:h12
