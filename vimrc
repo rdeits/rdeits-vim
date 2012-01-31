@@ -20,6 +20,8 @@ set smartcase
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.pyc,*.doc,*.mp3,*.mp4,*.png,*.jpg,*.epub
+set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pictures,VirtualMachines
 
 " Status bar
 set laststatus=2
@@ -283,8 +285,6 @@ let g:fuf_modesDisable = ['mrucmd']
 let g:CommandTScanDotDirectories=1
 let g:CommandTMaxDepth=10
 let g:CommandTMaxFiles=20000
-set wildignore+=*.o,*.obj,.git,*.pyc,.svn,*.doc,*.mp3,*.mp4,*.png,*.jpg,*.epub
-set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pictures,VirtualMachines
 " let g:CommandTMatchWindowAtTop=0
 " let g:CommandTMaxHeight=10
 " let g:CommandTMatchWindowReverse=1

@@ -15,6 +15,9 @@ filetype off
 set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/
 filetype on
 
+" Mac folder names to ignore (for command-t)
+set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pictures,VirtualMachines
+
 " Transparency
 set transparency=1
 set guifont=DejaVu\ Sans\ Mono:h12
