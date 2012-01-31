@@ -21,7 +21,6 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set wildignore+=*.pyc,*.doc,*.mp3,*.mp4,*.png,*.jpg,*.epub
-set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pictures,VirtualMachines
 
 " Status bar
 set laststatus=2
