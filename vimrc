@@ -22,6 +22,12 @@ set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set wildignore+=*.pyc,*.doc,*.mp3,*.mp4,*.png,*.jpg,*.epub
 
+" Friendlier mappings for saving and quitting
+map <M-s> :w<CR>
+imap <M-s> <esc>:w<cr>i
+map <M-w> :q<CR>
+imap <M-w> <esc>:q<cr>i
+
 " Status bar
 set laststatus=2
 
@@ -292,7 +298,7 @@ let g:CommandTMaxFiles=20000
 
 
 " Binding for nicer buffer closing
-map <M-w> <Plug>BufKillBd
+" map <M-w> <Plug>BufKillBd
 
 if has("python")
 " This is a nifty function for creating bulleted lists and other things. When
