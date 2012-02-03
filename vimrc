@@ -277,14 +277,12 @@ endfunction
 let mapleader = ","
 
 " Fuzzyfinder customizations
-map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
-map <leader><leader> :FufBuffer<C-M>
-map <leader>mr :FufMruFile<C-M>
-map <leader>mm :FufMruFile<C-M>
-let g:fuf_modesDisable = ['mrucmd']
-" let g:fuf_previewHeight = 50
-" let g:fuf_keyPreview = '<space>'
-" let g:fuf_autoPreview = 0
+" map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
+" map <leader><leader> :FufBuffer<C-M>
+" map <leader>mr :FufMruFile<C-M>
+" map <leader>mm :FufMruFile<C-M>
+" let g:fuf_modesDisable = ['mrucmd']
+
 
 " Command T config
 let g:CommandTScanDotDirectories=1
@@ -350,6 +348,19 @@ if !has("gui_running")
 	set background=dark
 	color solarized
 end
+
+" Ctrlp configuration
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_mruf_max = 1000
+let g:ctrlp_max_files = 3000
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_max_depth = 10
+map <leader>f :CtrlP<CR>
+map <leader><leader> :CtrlPBuffer<CR>
+map <leader>mm :CtrlPMRU<CR>
+let g:ctrlp_extensions = ['dir']
+map <leader>. :CtrlPDir<CR>
+
 
 " OS-specific configurations:
 if has("macunix")

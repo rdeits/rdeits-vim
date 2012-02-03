@@ -3,6 +3,7 @@
 .DS_Store
 bundle/l9/
 bundle/ack.vim/
+bundle/ctrlp/
 bundle/bufkill/
 bundle/fuzzy-finder/
 bundle/nerdcommenter/

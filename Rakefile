@@ -114,6 +114,7 @@ vim_plugin_task "pathogen", "git://github.com/tpope/vim-pathogen.git"
 vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
+vim_plugin_task "ctrlp", "git://github.com/kien/ctrlp.vim.git" 
 
 
 # On ubuntu, this requires that you do "sudo apt-get install ruby1.8-dev" first

@@ -10,10 +10,10 @@ if has("gui_macvim")
 
 	"Command T config
 	macmenu &File.New\ Tab key=<nop>
-	" map <D-t> :CommandT<CR>
-	" imap <D-t> <esc>:CommandT<cr>i
-    map <D-t> <Plug>PeepOpen
-    imap <D-t> <esc><Plug>PeepOpen
+	map <D-t> :CommandT<CR>
+	imap <D-t> <esc>:CommandT<cr>i
+    " map <D-t> <Plug>PeepOpen
+    " imap <D-t> <esc><Plug>PeepOpen
 
 	" Command-e for ConqueTerm
 	map <D-e> :call StartTerm()<CR>
