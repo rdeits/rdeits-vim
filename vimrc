@@ -34,7 +34,7 @@ set laststatus=2
 " Without setting this, ZoomWin restores windows in a way that causes
 " equalalways behavior to be triggered the next time CommandT is used.
 " This is likely a bludgeon to solve some other issue, but it works
-" set noequalalways
+set noequalalways
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
@@ -338,7 +338,7 @@ let g:tagbar_expand=1
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
 set completeopt=longest,menuone
-imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
+" imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
@@ -351,6 +351,8 @@ end
 
 " Ctrlp configuration
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_jump_to_buffer = 0
 let g:ctrlp_mruf_max = 1000
 let g:ctrlp_max_files = 3000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
@@ -361,6 +363,14 @@ map <leader>mm :CtrlPMRU<CR>
 let g:ctrlp_extensions = ['dir']
 map <leader>. :CtrlPDir<CR>
 
+" Python Mode config
+let g:pymode_lint_cwindow = 1
+let g:pymode_lint_message = 0
+let g:pymode_lint_write = 0
+let g:pymode_lint_jump = 1
+let g:pymode_breakpoint_key = '<leader>br'
+let g:pymode_options_other = 0
+map <leader>k :PyLint<CR>
 
 " OS-specific configurations:
 if has("macunix")

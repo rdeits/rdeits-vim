@@ -6,6 +6,7 @@ bundle/ack.vim/
 bundle/ctrlp/
 bundle/bufkill/
 bundle/fuzzy-finder/
+bundle/python-mode/
 bundle/nerdcommenter/
 bundle/pathogen/
 bundle/vim-latex/
