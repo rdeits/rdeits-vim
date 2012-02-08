@@ -364,6 +364,9 @@ let g:ctrlp_extensions = ['dir']
 map <leader>. :CtrlPDir<CR>
 
 " Python Mode config
+if !has("python")
+	let g:pymode = 0
+endif
 let g:pymode_lint_cwindow = 1
 let g:pymode_lint_message = 0
 let g:pymode_lint_write = 0

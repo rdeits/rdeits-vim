@@ -62,7 +62,6 @@ endfunction
 " Map backspace to d (to delete characters) in visual mode
 vnoremap <BS> ""di
 
-
 " Use visual mode, not select mode, when selecting with the mouse
 set selectmode=
 
