@@ -373,7 +373,9 @@ let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
 let g:pymode_breakpoint_key = '<leader>br'
 let g:pymode_options_other = 0
-map <leader>k :PyLint<CR>
+let g:pymode_doc_key = 'K'
+map <C-K> :RopeShowDoc<CR>
+map <leader>q :PyLint<CR>
 
 " OS-specific configurations:
 if has("macunix")
