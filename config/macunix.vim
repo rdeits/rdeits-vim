@@ -21,8 +21,3 @@ set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pict
 " Transparency
 set transparency=1
 set guifont=DejaVu\ Sans\ Mono:h12
-
-map <D-j> :wincmd j<CR>
-map <D-h> :wincmd h<CR>
-map <D-k> :wincmd k<CR>
-map <D-l> :wincmd l<CR>

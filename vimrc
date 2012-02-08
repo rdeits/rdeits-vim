@@ -377,6 +377,12 @@ let g:pymode_doc_key = 'K'
 map <C-K> :RopeShowDoc<CR>
 map <leader>q :PyLint<CR>
 
+" Faster window switching
+map <M-j> :wincmd j<CR>
+map <M-h> :wincmd h<CR>
+map <M-k> :wincmd k<CR>
+map <M-l> :wincmd l<CR>
+
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
