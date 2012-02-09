@@ -383,6 +383,15 @@ map <M-h> :wincmd h<CR>
 map <M-k> :wincmd k<CR>
 map <M-l> :wincmd l<CR>
 
+" Command to do latexmk on a file
+function LatexmkTerminal()
+	let @@ = "cd " . expand("%:p:h") . "; latexmk -pvc -pdf " . expand("%:t")
+	ConqueTermSplit bash
+	resize 10
+	normal ""p
+endfunc
+command Latexmk call LatexmkTerminal() 
+
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
