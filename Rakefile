@@ -102,7 +102,7 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
-vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
+# vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "nerdcommenter",    "git://github.com/ddollar/nerdcommenter.git"
 # vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
 # vim_plugin_task "neocomplcache", "git://github.com/Shougo/neocomplcache.git"

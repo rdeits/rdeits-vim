@@ -8,7 +8,6 @@ bundle/python-mode/
 bundle/nerdcommenter/
 bundle/pathogen/
 bundle/vim-latex/
-bundle/conque*
 bundle/tagbar
 bundle/command-t*
 bundle/solarized

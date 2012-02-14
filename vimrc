@@ -383,6 +383,8 @@ map <M-h> :wincmd h<CR>
 map <M-k> :wincmd k<CR>
 map <M-l> :wincmd l<CR>
 
+let g:ConqueTerm_ReadUnfocused = 1
+
 " Command to do latexmk on a file
 function LatexmkTerminal()
 	let @@ = "cd " . expand("%:p:h") . "; latexmk -pvc -pdf " . expand("%:t")
