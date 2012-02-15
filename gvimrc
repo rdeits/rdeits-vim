@@ -49,7 +49,7 @@ function StartTerm()
 endfunction
 
 " Nerd tree configuration
-runtime NERD_tree_config.vim
+" runtime NERD_tree_config.vim
 
 " Map backspace to d (to delete characters) in visual mode
 vnoremap <BS> ""di
