@@ -338,6 +338,21 @@ endif
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_expand=1
 
+let g:tagbar_type_tex = {
+	\ 'ctagstype' : 'latex',
+	\ 'kinds'     : [
+		\ 's:sections',
+		\ 't:subsections',
+		\ 'u:subsubsections',
+		\ 'g:graphics',
+		\ 'l:labels',
+		\ 'r:refs:1',
+		\ 'p:pagerefs:1'
+	\ ],
+	\ 'sort'    : 0,
+	\ 'deffile' : '$HOME/.vim/latex-ctags.cnf'
+\ }
+
 " Supertab configuration
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
