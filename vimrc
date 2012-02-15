@@ -329,6 +329,10 @@ let g:miniBufExplModSelTarget=1
 let g:NERDTreeMouseMode = 2
 let g:miniBufExplorerMoreThanOne = 10000
 
+" Enable the mouse for things like xterm, etc.
+if has("mouse")
+	set mouse=a
+endif
 
 " Tagbar customizatoin
 nmap <F8> :TagbarToggle<CR>
@@ -345,6 +349,7 @@ hi link MBEVisibleChangedActive Search
 
 if !has("gui_running")
 	let g:solarized_termcolors=256
+	let g:solarized_termtrans=1
 	set background=dark
 	color solarized
 end
@@ -383,8 +388,6 @@ map <M-h> :wincmd h<CR>
 map <M-k> :wincmd k<CR>
 map <M-l> :wincmd l<CR>
 
-let g:ConqueTerm_ReadUnfocused = 1
-
 " Command to do latexmk on a file
 function LatexmkTerminal()
 	let @@ = "cd " . expand("%:p:h") . "; latexmk -pvc -pdf " . expand("%:t")
@@ -393,6 +396,21 @@ function LatexmkTerminal()
 	normal ""p
 endfunc
 command Latexmk call LatexmkTerminal() 
+
+" fix meta-keys which generate <Esc>a .. <Esc>z
+let c='a'
+while c <= 'z'
+  exec "set <M-".tolower(c).">=\e".c
+  exec "imap \e".c." <M-".tolower(c).">"
+  let c = nr2char(1+char2nr(c))
+endw
+let c='/'
+exec "set <M-".c.">=\e".c
+exec "imap \e".c." <M-".c.">"
+
+map <M-/> <plug>NERDCommenterToggle<CR>
+
+runtime NERD_tree_config.vim
 
 " OS-specific configurations:
 if has("macunix")
