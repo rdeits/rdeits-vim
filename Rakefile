@@ -104,7 +104,7 @@ end
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
 # vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "nerdcommenter",    "git://github.com/ddollar/nerdcommenter.git"
-# vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
+vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
 # vim_plugin_task "neocomplcache", "git://github.com/Shougo/neocomplcache.git"
 # vim_plugin_task "fuzzy-finder",     "git://github.com/vim-scripts/FuzzyFinder.git"
 # vim_plugin_task "l9", "git://github.com/vim-scripts/L9.git"
@@ -116,23 +116,24 @@ vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
 vim_plugin_task "ctrlp", "git://github.com/kien/ctrlp.vim.git" 
 vim_plugin_task "python-mode", "git://github.com/klen/python-mode.git"
+vim_plugin_task "vim-markdown-preview", "git://github.com/rdeits/vim-markdown-preview.git"
 
 
 # On ubuntu, this requires that you do "sudo apt-get install ruby1.8-dev" first
-vim_plugin_task "command-t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
-  Dir.chdir "bundle/command-t/ruby/command-t" do
-    if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
-      sh "/usr/bin/ruby1.8 extconf.rb"
-    elsif File.exists?("/usr/bin/ruby") # prefer system rubies
-      sh "/usr/bin/ruby extconf.rb"
-    elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
-      sh "rvm system ruby extconf.rb"
-    elsif `rbenv > /dev/null 2>&1` && $?.exitstatus == 0
-      sh "RBENV_VERSION=system ruby extconf.rb"
-    end
-    sh "make clean && make"
-  end
-end
+# vim_plugin_task "command-t",        "http://s3.wincent.com/command-t/releases/command-t-1.2.1.vba" do
+#   Dir.chdir "bundle/command-t/ruby/command-t" do
+#     if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
+#       sh "/usr/bin/ruby1.8 extconf.rb"
+#     elsif File.exists?("/usr/bin/ruby") # prefer system rubies
+#       sh "/usr/bin/ruby extconf.rb"
+#     elsif `rvm > /dev/null 2>&1` && $?.exitstatus == 0
+#       sh "rvm system ruby extconf.rb"
+#     elsif `rbenv > /dev/null 2>&1` && $?.exitstatus == 0
+#       sh "RBENV_VERSION=system ruby extconf.rb"
+#     end
+#     sh "make clean && make"
+#   end
+# end
 
 desc "Update the documentation"
 task :update_docs do

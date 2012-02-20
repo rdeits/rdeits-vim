@@ -7,7 +7,7 @@ setlocal expandtab
 setlocal nosmartindent
 setlocal formatoptions-=t
 setlocal formatoptions+=q
-set omnifunc=pythoncomplete
+set omnifunc=pythoncomplete#Complete
 
 " Execute code with shift+e
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>

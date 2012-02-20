@@ -355,9 +355,7 @@ let g:tagbar_type_tex = {
 
 " Supertab configuration
 let g:SuperTabDefaultCompletionType="context"
-" let g:SuperTabContextDefaultCompletionType="<c-x><c-o>"
-set completeopt=longest,menuone
-" imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x><c-o>")<cr>
+" set completeopt=longest,menuone,preview
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
