@@ -9,8 +9,8 @@ bundle/nerdcommenter/
 bundle/pathogen/
 bundle/vim-latex/
 bundle/tagbar
-bundle/command-t*
 bundle/solarized
 bundle/vim-markdown-preview
+bundle/supertab-plugin
 plugin/ack*
 plugin/NERD_commenter*
