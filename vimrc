@@ -424,7 +424,6 @@ exec "imap \e".c." <M-".c.">"
 
 map <M-/> <plug>NERDCommenterToggle<CR>
 
-runtime NERD_tree_config.vim
 
 " OS-specific configurations:
 if has("macunix")
