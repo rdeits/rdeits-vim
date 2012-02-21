@@ -42,6 +42,8 @@ let g:solarized_contrast='high'
 color solarized
 set cursorline
 
+runtime NERD_tree_config.vim
+
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'

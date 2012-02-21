@@ -14,7 +14,6 @@ function s:CloseIfOnlyNerdTreeLeft()
 			return
 		endif
 	endfor
-	echo "quitting"
 	q
 	q
 	q

@@ -356,6 +356,7 @@ let g:tagbar_type_tex = {
 " Supertab configuration
 let g:SuperTabDefaultCompletionType="context"
 " set completeopt=longest,menuone,preview
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " MiniBufExplorer config
 hi link MBEVisibleChangedActive Search
