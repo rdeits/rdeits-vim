@@ -117,6 +117,7 @@ vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.
 vim_plugin_task "ctrlp", "git://github.com/kien/ctrlp.vim.git" 
 vim_plugin_task "python-mode", "git://github.com/klen/python-mode.git"
 vim_plugin_task "vim-markdown-preview", "git://github.com/rdeits/vim-markdown-preview.git"
+vim_plugin_task "yankring", "git://github.com/vim-scripts/YankRing.vim.git"
 
 
 # On ubuntu, this requires that you do "sudo apt-get install ruby1.8-dev" first

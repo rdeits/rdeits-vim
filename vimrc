@@ -383,18 +383,18 @@ let g:ctrlp_extensions = ['dir']
 map <leader>. :CtrlPDir<CR>
 
 " Python Mode config
-if !has("python")
-	let g:pymode = 0
-endif
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_message = 0
-let g:pymode_lint_write = 0
-let g:pymode_lint_jump = 1
-let g:pymode_breakpoint_key = '<leader>br'
-let g:pymode_options_other = 0
-let g:pymode_doc_key = 'K'
-map <C-K> :RopeShowDoc<CR>
-map <leader>q :PyLint<CR>
+" if !has("python")
+"     let g:pymode = 0
+" endif
+" let g:pymode_lint_cwindow = 1
+" let g:pymode_lint_message = 0
+" let g:pymode_lint_write = 0
+" let g:pymode_lint_jump = 1
+" let g:pymode_breakpoint_key = '<leader>br'
+" let g:pymode_options_other = 0
+" let g:pymode_doc_key = 'K'
+" map <C-K> :RopeShowDoc<CR>
+" map <leader>q :PyLint<CR>
 
 " Faster window switching
 map <M-j> :wincmd j<CR>
@@ -424,6 +424,8 @@ exec "imap \e".c." <M-".c.">"
 
 map <M-/> <plug>NERDCommenterToggle<CR>
 
+" Yankring mapping
+nnoremap <silent> <leader>yr :YRShow<CR>
 
 " OS-specific configurations:
 if has("macunix")

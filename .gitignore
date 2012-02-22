@@ -10,6 +10,7 @@ bundle/pathogen/
 bundle/vim-latex/
 bundle/tagbar
 bundle/solarized
+bundle/yankring
 bundle/vim-markdown-preview
 bundle/supertab-plugin
 plugin/ack*
