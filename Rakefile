@@ -115,7 +115,7 @@ vim_plugin_task "ir-black", "git://github.com/wgibbs/vim-irblack.git"
 vim_plugin_task "tagbar", "git://github.com/majutsushi/tagbar.git"
 vim_plugin_task "solarized", "git://github.com/altercation/vim-colors-solarized.git"
 vim_plugin_task "ctrlp", "git://github.com/kien/ctrlp.vim.git" 
-vim_plugin_task "python-mode", "git://github.com/klen/python-mode.git"
+# vim_plugin_task "python-mode", "git://github.com/klen/python-mode.git"
 vim_plugin_task "vim-markdown-preview", "git://github.com/rdeits/vim-markdown-preview.git"
 vim_plugin_task "yankring", "git://github.com/vim-scripts/YankRing.vim.git"
 

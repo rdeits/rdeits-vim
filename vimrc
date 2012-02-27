@@ -427,6 +427,17 @@ map <M-/> <plug>NERDCommenterToggle<CR>
 " Yankring mapping
 nnoremap <silent> <leader>yr :YRShow<CR>
 
+" Use j and k to navigate screen lines, not code lines (for very long lines)
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <up> gj
+nnoremap <down> gk
+vnoremap <up> gj
+vnoremap <down> gk
+
+
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
