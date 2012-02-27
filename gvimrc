@@ -44,12 +44,6 @@ set cursorline
 
 runtime NERD_tree_config.vim
 
-" ConqueTerm wrapper
-function StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
-endfunction
-
 " Map backspace to d (to delete characters) in visual mode
 vnoremap <BS> ""di
 

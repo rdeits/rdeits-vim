@@ -412,15 +412,15 @@ endfunc
 command Latexmk call LatexmkTerminal() 
 
 " fix meta-keys which generate <Esc>a .. <Esc>z
-let c='a'
-while c <= 'z'
-  exec "set <M-".tolower(c).">=\e".c
-  exec "imap \e".c." <M-".tolower(c).">"
-  let c = nr2char(1+char2nr(c))
-endw
-let c='/'
-exec "set <M-".c.">=\e".c
-exec "imap \e".c." <M-".c.">"
+" let c='a'
+" while c <= 'z'
+"   exec "set <M-".tolower(c).">=\e".c
+"   exec "imap \e".c." <M-".tolower(c).">"
+"   let c = nr2char(1+char2nr(c))
+" endw
+" let c='/'
+" exec "set <M-".c.">=\e".c
+" exec "imap \e".c." <M-".c.">"
 
 map <M-/> <plug>NERDCommenterToggle<CR>
 
@@ -436,7 +436,6 @@ nnoremap <up> gj
 nnoremap <down> gk
 vnoremap <up> gj
 vnoremap <down> gk
-
 
 " OS-specific configurations:
 if has("macunix")
