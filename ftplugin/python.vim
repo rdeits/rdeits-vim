@@ -7,9 +7,12 @@ setlocal expandtab
 setlocal nosmartindent
 setlocal formatoptions-=t
 setlocal formatoptions+=q
-set omnifunc=pythoncomplete#Complete
+" set omnifunc=pythoncomplete#Complete
 
 " Execute code with shift+e
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+
+let g:ropevim_extended_complete=1
+let g:ropevim_enable_shortcuts=0
 
 " silent !mvim ~/Dropbox/vim/python_shortcuts.txt

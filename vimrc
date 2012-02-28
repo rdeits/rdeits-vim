@@ -402,6 +402,8 @@ map <M-h> :wincmd h<CR>
 map <M-k> :wincmd k<CR>
 map <M-l> :wincmd l<CR>
 
+set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}\ %=%-14.(%l,%c%V%)\ %p%%
+
 " Command to do latexmk on a file
 function LatexmkTerminal()
 	let @@ = "cd " . expand("%:p:h") . "; latexmk -pvc -pdf " . expand("%:t")
@@ -425,6 +427,8 @@ nnoremap <up> gj
 nnoremap <down> gk
 vnoremap <up> gj
 vnoremap <down> gk
+
+autocmd FileType python setlocal omnifunc=RopeCompleteFunc
 
 " OS-specific configurations:
 if has("macunix")
