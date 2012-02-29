@@ -1,3 +1,14 @@
+Requirements
+============
+
+* git
+* ruby
+* rake
+* gvim or macvim
+* python (tested 2.7)
+* python rope
+* ropevim
+
 Installation
 ============
 

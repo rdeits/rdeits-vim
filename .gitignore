@@ -14,7 +14,7 @@ bundle/yankring
 bundle/vim-markdown-preview
 bundle/supertab-plugin
 bundle/fugitive
-bundle/rope-vim
+bundle/ropevim
 bundle/rope-omni
 plugin/ack*
 plugin/NERD_commenter*

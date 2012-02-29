@@ -21,6 +21,9 @@ def vim_plugin_task(name, repo=nil)
           filename = File.basename(repo)
           sh "curl #{repo} > bundle/#{filename}"
 
+		elsif repo =~ /ssh:\/\/hg/
+		  sh "hg clone #{repo} #{dir}"
+
         else
           raise ArgumentError, 'unrecognized source url for plugin'
         end
@@ -119,8 +122,9 @@ vim_plugin_task "ctrlp", "git://github.com/kien/ctrlp.vim.git"
 vim_plugin_task "vim-markdown-preview", "git://github.com/rdeits/vim-markdown-preview.git"
 vim_plugin_task "yankring", "git://github.com/vim-scripts/YankRing.vim.git"
 vim_plugin_task "fugitive", "git://github.com/tpope/vim-fugitive.git"
-vim_plugin_task "rope-vim", "git://github.com/klen/rope-vim.git"
+# vim_plugin_task "rope-vim", "git://github.com/klen/rope-vim.git"
 vim_plugin_task "rope-omni", "git://github.com/rygwdn/rope-omni.git"
+vim_plugin_task "ropevim", "ssh://hg@bitbucket.org/agr/ropevim"
 
 
 # On ubuntu, this requires that you do "sudo apt-get install ruby1.8-dev" first
