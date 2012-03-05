@@ -423,12 +423,14 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
-nnoremap <up> gj
-nnoremap <down> gk
+nnoremap <up> gk
+nnoremap <down> gj
 vnoremap <up> gj
 vnoremap <down> gk
 
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+
+map <leader>cd :execute "chdir ".escape(expand("%:p:h"), ' ')<CR>
 
 " OS-specific configurations:
 if has("macunix")
