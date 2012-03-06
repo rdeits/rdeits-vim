@@ -3,7 +3,7 @@ task :get_vundle do
 end
 
 task :bundle_install do
-	system('gvim -u bundles.vim +BundleInstall +q +q')
+	system('gvim -u bundles.vim -c "let g:loaded_minibufexplorer=1" +BundleInstall +q +q')
 end
 
 task :link_vimrc do

@@ -23,7 +23,6 @@ call vundle#rc()
  Bundle 'rygwdn/rope-omni'
  Bundle 'vim-scripts/The-NERD-tree'
  Bundle 'rdeits/minibufexpl.vim'
- let loaded_minibufexplorer = 1
  " vim-scripts repos
  " Bundle 'L9'
  " Bundle 'FuzzyFinder'
