@@ -1,5 +1,5 @@
 task :bundle_install do
-	system('vim -u bundles.vim +BundleInstall +q')
+	system('vim -u bundles.vim +BundleInstall')
 end
 
 task :link_vimrc do
@@ -14,7 +14,7 @@ task :link_vimrc do
 end
 
 task :default => [
-  :bundle_install
+  :bundle_install,
   :link_vimrc
 ]
 

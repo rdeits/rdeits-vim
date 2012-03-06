@@ -2,6 +2,8 @@
 " here
 source bundles.vim
 
+set rtp+=~/.vim/ropevim
+
 set ruler
 syntax on
 
