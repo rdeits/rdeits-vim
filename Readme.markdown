@@ -16,11 +16,13 @@ Installation
 	cd ~/.vim
 	rake
 
+To install all the plugins, open up vim and then do:
+
+	:BundleInstall
+
 On Ubuntu, you must first do: 
 
 	sudo apt-get install git rake vim-gnome ruby1.8-dev python-rope
 
-
 You will also need to easy_install ropevim
-
 
