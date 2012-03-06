@@ -1,3 +1,5 @@
 .VimballRecord
 .DS_Store
 /bundle/*
+/ropevim/
+/minibufexpl.vim/

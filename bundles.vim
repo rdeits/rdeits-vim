@@ -22,7 +22,7 @@ call vundle#rc()
  Bundle 'tpope/vim-fugitive'
  Bundle 'rygwdn/rope-omni'
  Bundle 'vim-scripts/The-NERD-tree'
- Bundle 'rdeits/minibufexpl.vim'
+ " Bundle 'rdeits/minibufexpl.vim'
  " vim-scripts repos
  " Bundle 'L9'
  " Bundle 'FuzzyFinder'

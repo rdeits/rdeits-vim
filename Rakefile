@@ -1,9 +1,10 @@
 task :get_vundle do
 	system('git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
+	system('git clone http://github.com/rdeits/minibufexpl.vim ~/.vim/minibufexpl.vim')
 end
 
 task :bundle_install do
-	system('gvim -u bundles.vim -c "let g:loaded_minibufexplorer=1" +BundleInstall +q +q')
+	system('vim -u bundles.vim +BundleInstall +pclose +q')
 end
 
 task :link_vimrc do

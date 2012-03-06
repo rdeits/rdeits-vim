@@ -3,6 +3,7 @@
 source ~/.vim/bundles.vim
 
 set rtp+=~/.vim/ropevim
+set rtp+=~/.vim/minibufexpl.vim
 
 set ruler
 syntax on
