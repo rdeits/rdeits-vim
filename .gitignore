@@ -1,4 +1,4 @@
 .VimballRecord
 .DS_Store
-/bundle/
-!vundle
+/bundle/*
+!/bundle/vundle*
