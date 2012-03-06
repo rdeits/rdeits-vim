@@ -1,3 +1,7 @@
+task :bundle_install do
+	system('vim -u bundles.vim +BundleInstall +q')
+end
+
 task :link_vimrc do
   %w[vimrc gvimrc].each do |script|
     dotfile = File.join(ENV['HOME'], ".#{script}")
@@ -10,6 +14,7 @@ task :link_vimrc do
 end
 
 task :default => [
+  :bundle_install
   :link_vimrc
 ]
 
