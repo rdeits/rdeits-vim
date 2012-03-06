@@ -1,32 +1,3 @@
-if has("gui_macvim")
-	" Fullscreen takes up entire screen
-	set fuoptions=maxhorz,maxvert
-
-	" Command-Return for fullscreen
-	macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
-
-	" Command-Shift-F for Ack
-	map <D-F> :Ack<space>
-
-	"Command T config
-	macmenu &File.New\ Tab key=<nop>
-	map <D-t> :CommandT<CR>
-	imap <D-t> <esc>:CommandT<cr>i
-    " map <D-t> <Plug>PeepOpen
-    " imap <D-t> <esc><Plug>PeepOpen
-
-	" Command-e for ConqueTerm
-	map <D-e> :call StartTerm()<CR>
-
-	" Command-/ to toggle comments
-	map <D-/> <plug>NERDCommenterToggle<CR>
-	imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
-
-	" Adjust viewports to the same size
-	" map <Leader>= <C-w>=
-	" imap <Leader>= <Esc> <C-w>=
-endif
-
 " Start without the toolbar
 set guioptions-=T
 
@@ -49,8 +20,5 @@ vnoremap <BS> ""di
 
 " Use visual mode, not select mode, when selecting with the mouse
 set selectmode=
-
-" MiniBufExplorer config
-" hi link MBEVisibleChangedActive Search
 
 set t_vb=

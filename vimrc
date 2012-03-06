@@ -454,6 +454,7 @@ endfunc
 command Latexmk call LatexmkTerminal() 
 
 map <M-/> <plug>NERDCommenterToggle<CR>
+imap <M-/> <Esc><plug>NERDCommenterToggle<CR>i
 
 " Yankring mapping
 nnoremap <silent> <leader>yr :YRShow<CR>

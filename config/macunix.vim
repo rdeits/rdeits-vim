@@ -21,3 +21,23 @@ set wildignore+=Desktop,Applications,Downloads,Documents,Games,Movies,Music,Pict
 " Transparency
 set transparency=1
 set guifont=DejaVu\ Sans\ Mono:h12
+
+if has("gui_macvim")
+	" Fullscreen takes up entire screen
+	set fuoptions=maxhorz,maxvert
+
+	" Command-Return for fullscreen
+	macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+
+	" Command-Shift-F for Ack
+	map <D-F> :Ack<space>
+
+	" Command-/ to toggle comments
+	map <D-/> <plug>NERDCommenterToggle<CR>
+	imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+
+	" Adjust viewports to the same size
+	" map <Leader>= <C-w>=
+	" imap <Leader>= <Esc> <C-w>=
+endif
+
