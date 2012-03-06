@@ -1,5 +1,9 @@
+task :get_vundle do
+	system('git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle')
+end
+
 task :bundle_install do
-	system('vim -u bundles.vim +BundleInstall')
+	system('gvim -u bundles.vim +BundleInstall +q +q')
 end
 
 task :link_vimrc do
@@ -14,7 +18,8 @@ task :link_vimrc do
 end
 
 task :default => [
-  :bundle_install,
-  :link_vimrc
+  :link_vimrc,
+  :get_vundle,
+  :bundle_install
 ]
 

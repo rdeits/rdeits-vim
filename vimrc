@@ -1,6 +1,6 @@
 " Note that 'set nocompatible' is executed in bundles.vim, so we don't do it
 " here
-source bundles.vim
+source ~/.vim/bundles.vim
 
 set rtp+=~/.vim/ropevim
 

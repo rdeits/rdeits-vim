@@ -23,13 +23,13 @@ call vundle#rc()
  Bundle 'rygwdn/rope-omni'
  Bundle 'vim-scripts/The-NERD-tree'
  Bundle 'rdeits/minibufexpl.vim'
- " vim-scripts repos
- " Bundle 'L9'
- " Bundle 'FuzzyFinder'
- " non github repos
+ " " vim-scripts repos
+ " " Bundle 'L9'
+ " " Bundle 'FuzzyFinder'
+ " " non github repos
  Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
- " Bundle 'git://git.wincent.com/command-t.git'
- " ...
+ " " Bundle 'git://git.wincent.com/command-t.git'
+ " " ...
 
 filetype plugin indent on     " required! 
  "
