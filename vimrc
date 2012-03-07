@@ -258,6 +258,7 @@ set grepprg=grep\ -nH\ $*
 " " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+let g:Tex_ViewRule_pdf = 'Skim'
 
 noremap <C-left> :call PrevBuffer()<CR>
 noremap <C-right> :call NextBuffer()<CR>
