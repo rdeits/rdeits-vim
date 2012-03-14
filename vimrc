@@ -433,6 +433,7 @@ vnoremap <up> gj
 vnoremap <down> gk
 
 autocmd FileType python setlocal omnifunc=RopeCompleteFunc
+let g:ropevim_enable_shortcuts = 0
 
 map <leader>cd :execute "chdir ".escape(expand("%:p:h"), ' ')<CR>
 

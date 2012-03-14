@@ -39,5 +39,9 @@ if has("gui_macvim")
 	" Adjust viewports to the same size
 	" map <Leader>= <C-w>=
 	" imap <Leader>= <Esc> <C-w>=
+	
+	" Fix the number of columns after opening the macvim sidebar
+	map <leader>s :set columns=90<CR>
+	
 endif
 
