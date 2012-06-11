@@ -13,21 +13,21 @@ call vundle#rc()
  Bundle 'mileszs/ack.vim'
  Bundle 'ddollar/nerdcommenter'
  Bundle 'ervandew/supertab'
- Bundle 'vim-scripts/bufkill.vim'
- Bundle 'majutsushi/tagbar'
+ " Bundle 'vim-scripts/bufkill.vim'
+ " Bundle 'majutsushi/tagbar'
  Bundle 'altercation/vim-colors-solarized'
  Bundle 'kien/ctrlp.vim'
  Bundle 'rdeits/vim-markdown-preview'
- Bundle 'vim-scripts/YankRing.vim'
- Bundle 'tpope/vim-fugitive'
- Bundle 'rygwdn/rope-omni'
- Bundle 'vim-scripts/The-NERD-tree'
+ " Bundle 'vim-scripts/YankRing.vim'
+ " Bundle 'tpope/vim-fugitive'
+ " Bundle 'rygwdn/rope-omni'
+ " Bundle 'vim-scripts/The-NERD-tree'
  " Bundle 'rdeits/minibufexpl.vim'
  " vim-scripts repos
  " Bundle 'L9'
  " Bundle 'FuzzyFinder'
  " non github repos
- Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+ " Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
  " " Bundle 'git://git.wincent.com/command-t.git'
  " " ...
 

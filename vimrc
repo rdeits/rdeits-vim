@@ -407,7 +407,7 @@ map <M-h> :wincmd h<CR>
 map <M-k> :wincmd k<CR>
 map <M-l> :wincmd l<CR>
 
-set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}\ %=%-14.(%l,%c%V%)\ %p%%
+" set statusline=%<%f\ %h%m%r\ %{fugitive#statusline()}\ %=%-14.(%l,%c%V%)\ %p%%
 
 " Command to do latexmk on a file
 function LatexmkTerminal()
