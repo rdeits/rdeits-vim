@@ -365,7 +365,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 hi link MBEVisibleChangedActive Search
 
 if !has("gui_running")
-	let g:solarized_termcolors=256
+	set t_Co=16
+	let g:solarized_termcolors=16
 	let g:solarized_termtrans=1
 	set background=dark
 	color solarized
@@ -379,9 +380,10 @@ let g:ctrlp_mruf_max = 1000
 let g:ctrlp_max_files = 3000
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_max_depth = 10
+let g:ctrlp_mruf_last_entered = 1
 map <leader>f :CtrlP<CR>
-map <leader><leader> :CtrlPBuffer<CR>
-map <leader>mm :CtrlPMRU<CR>
+map <leader><leader> :CtrlPMRU<CR>
+" map <leader>mm :CtrlPMRU<CR>
 let g:ctrlp_extensions = ['dir']
 map <leader>. :CtrlPDir<CR>
 
