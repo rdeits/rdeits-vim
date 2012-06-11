@@ -365,8 +365,8 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 hi link MBEVisibleChangedActive Search
 
 if !has("gui_running")
-	set t_Co=16
-	let g:solarized_termcolors=16
+	set t_Co=256
+	let g:solarized_termcolors=256
 	let g:solarized_termtrans=1
 	set background=dark
 	color solarized
