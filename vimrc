@@ -1,5 +1,6 @@
 set nocompatible
 
+call pathogen#infect()
 set rtp+=~/.vim/ropevim
 
 set ruler
