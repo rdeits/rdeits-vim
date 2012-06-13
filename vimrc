@@ -1,9 +1,6 @@
-" Note that 'set nocompatible' is executed in bundles.vim, so we don't do it
-" here
-source ~/.vim/bundles.vim
+set nocompatible
 
 set rtp+=~/.vim/ropevim
-set rtp+=~/.vim/minibufexpl.vim
 
 set ruler
 syntax on
