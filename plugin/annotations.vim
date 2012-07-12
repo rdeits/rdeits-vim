@@ -3,6 +3,7 @@
 function AnnotationMode()
 	set cursorline
 	set cursorcolumn
+	set autoindent
 	map <buffer> <leader>ad ?answer<CR>A #done<Esc>jzCzjzO:w<CR>
 	setlocal foldmethod=indent
 	map <buffer> <leader>as $F:la<CR>- - <Esc>o  - []<Esc>i
