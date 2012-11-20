@@ -8,3 +8,4 @@ inoremap <buffer> } <Space><BS><Esc>>>A
 inoremap <buffer> { <Space><BS><Esc><<A
 
 syn match Comment "\*.*$"
+syntax off

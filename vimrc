@@ -437,6 +437,10 @@ let g:ropevim_enable_shortcuts = 0
 
 map <leader>cd :execute "chdir ".escape(expand("%:p:h"), ' ')<CR>
 
+if &diff
+	set columns=210
+endif
+
 " OS-specific configurations:
 if has("macunix")
 	runtime config/macunix.vim
