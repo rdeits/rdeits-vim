@@ -34,7 +34,7 @@ function! ShowGitDiff()
 	wincmd p
 endfunction
 
-setlocal previewheight=40
+setlocal previewheight=20
 map <leader>d :call ShowGitDiff()<CR>
 
 command! -bang -bar -buffer -complete=custom,s:diffcomplete -nargs=* DiffGitCached :call s:gitdiffcached(<bang>0,b:git_dir,<f-args>)
